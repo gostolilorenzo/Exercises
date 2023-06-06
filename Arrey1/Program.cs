@@ -40,6 +40,7 @@ namespace array_1
             string[] colori = { "giallo", "verde", "rosso" };
             Console.WriteLine(colori[1]);
 
+
         }
     }
 }
