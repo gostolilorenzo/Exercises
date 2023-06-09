@@ -17,8 +17,7 @@ namespace Es.Cicli
             //    Console.WriteLine($"{n} ");
             //    n++;
             //}
-            //Console.WriteLine("Premi un tasto per continuare ...");
-            //Console.ReadKey();
+            
 
             //int n = 1;      
             //int trovati = 0;
@@ -57,16 +56,28 @@ namespace Es.Cicli
 
             //SOMMA DEI PRIMI 100 NUMERI INTERI
 
-            int n = 0;
-            int trovati = 0;
+            //int n = 0;
+            //int trovati = 0;
 
-            do
-            {
-                n = n + trovati;                
-                trovati++;
-            }
-            while (trovati <= 100); Console.WriteLine($"SOMMA DEI PRIMI 100 NUMERI INTERI: {n }");
+            //do
+            //{
+            //    n = n + trovati;                
+            //    trovati++;
+            //}
+            //while (trovati <= 100); Console.WriteLine($"SOMMA DEI PRIMI 100 NUMERI INTERI: {n }");
 
+            Random generatore = new Random();
+            int n = generatore.Next(1, 10001);
+            Console.WriteLine(n);
+            while (n < 9000)
+                {                          
+                n = generatore.Next(1, 10001);
+                Console.WriteLine($"Numero casuale da 1 a 9000: {n}");
+                };
+
+            
+            Console.WriteLine("Premi un tasto per continuare ...");
+            Console.ReadKey();
         }
     }
 }
