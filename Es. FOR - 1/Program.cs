@@ -66,6 +66,9 @@ namespace Es.Cicli
             //}
             //while (trovati <= 100); Console.WriteLine($"SOMMA DEI PRIMI 100 NUMERI INTERI: {n }");
 
+
+            //NUMERI DA 1-10000 FERMATI QUANDO ESCE +9000
+
             Random generatore = new Random();
             int n = generatore.Next(1, 10001);
             Console.WriteLine(n);
