@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection.Metadata;
+using System.Threading;
 
 namespace Calcolatrice
 {
@@ -7,44 +7,111 @@ namespace Calcolatrice
     {
         static void Main(string[] args)
         {
-            int num1 = 0;
-            int num2 = 0;
+            //int num1 = 0;
+            //int num2 = 0;
 
-            Console.WriteLine("1-Inserisci un numero\n2-Inserisci il tipo: \n\taddizione = a\n\tsottrazione = s\n\tmoltiplicazione = m\n\tdivisione = d\n3-secondo numero");
-            if (int.TryParse(Console.ReadLine(), out num1))
+            //Console.WriteLine("1-Inserisci un numero\n2-Inserisci il tipo: \n\taddizione = a\n\tsottrazione = s\n\tmoltiplicazione = m\n\tdivisione = d\n3-secondo numero");
+            //if (int.TryParse(Console.ReadLine(), out num1))
+            //{
+            //    if (Console.ReadLine() == "a")
+            //    {
+            //        if (int.TryParse(Console.ReadLine(), out num2))
+            //        {
+            //            Console.WriteLine($"Il tuo riusltato è: {num1 + num2} !");
+            //        }
+            //    }
+            //    else if (Console.ReadLine() == "s")
+            //    {
+            //        if (int.TryParse(Console.ReadLine(), out num2))
+            //        {
+            //            Console.WriteLine($"Il tuo riusltato è: {num1 - num2} !");
+            //        }
+            //    }
+            //    else if (Console.ReadLine() == "m")
+            //    {
+            //        if (int.TryParse(Console.ReadLine(), out num2))
+            //        {
+            //            Console.WriteLine($"Il tuo riusltato è: {num1 * num2} !");
+            //        }
+            //    }
+            //    else if (Console.ReadLine() == "d")
+            //    {
+            //        if (int.TryParse(Console.ReadLine(), out num2))
+            //        {
+            //            if (num2 > 0)
+            //            {
+            //                Console.WriteLine($"Il tuo riusltato è: {num1 / num2} !");
+            //            }
+            //        }                 
+
+            //    }
+            //}
+
+            string selezione = "";
+            do
             {
-                if (Console.ReadLine() == "a")
+                Console.WriteLine("Benvenuti nella Home di questa fantastica calcolatrice!\n");
+                Console.WriteLine("1 -> seleziona che tipo di operazione vuoi fare: ");
+                Console.WriteLine("\t1 - Addizioni");
+                Console.WriteLine("\t2 - Sottrazioni");
+                Console.WriteLine("\t3 - Moltiplicazioni");
+                Console.WriteLine("\t4 - Divisioni");
+                Console.WriteLine("\t5 - Potenze");
+                Console.WriteLine("\t9 - exit");    
+
+                Console.WriteLine();
+
+                Console.Write("SCEGLI -> ");
+                selezione = Console.ReadLine();
+
+                if (int.TryParse(selezione, out int operazione) && operazione >= 1 && operazione <= 5 || operazione == 9);
                 {
-                    if (int.TryParse(Console.ReadLine(), out num2))
+                    int op1 = 0, op2 = 0;
+
+                    if (operazione != 9);
                     {
-                        Console.WriteLine($"Il tuo riusltato è: {num1 + num2} !");
+                        Console.WriteLine("Primo operando -> ");
+                        int.TryParse(Console.ReadLine(), out op1);
+
+                        Console.WriteLine($"{Environment.NewLine}Secondo operando -> ");
+                        int.TryParse(Console.ReadLine(), out op2);
+                    }
+
+                    switch (operazione)
+                    {
+                        case 1:
+                            Console.WriteLine($"{op1} + {op2} = {op1 + op2}");
+
+                            break;
+
+                        case 2:
+                            Console.WriteLine($"{op1} - {op2} = {op1 - op2}");
+
+                            break;
+
+                        case 3:
+                            Console.WriteLine($"{op1} * {op2} = {op1 * op2}");
+
+                            break;
+
+                        case 4:
+                            if (op2 != 0)
+                                Console.WriteLine($"{op1} / {op2} = {op1 / op2}");
+                            else
+                                Console.WriteLine("Impossibile dividere per zero!");
+
+                            break;
+
+                        case 5:
+                            Console.WriteLine($"{op1} elevato alla {op2} = {Math.Pow(op1, op2)}");
+
+                            break;                   
                     }
                 }
-                else if (Console.ReadLine() == "s")
-                {
-                    if (int.TryParse(Console.ReadLine(), out num2))
-                    {
-                        Console.WriteLine($"Il tuo riusltato è: {num1 - num2} !");
-                    }
-                }
-                else if (Console.ReadLine() == "m")
-                {
-                    if (int.TryParse(Console.ReadLine(), out num2))
-                    {
-                        Console.WriteLine($"Il tuo riusltato è: {num1 * num2} !");
-                    }
-                }
-                else if (Console.ReadLine() == "d")
-                {
-                    if (num2 > 0)
-                    {
-                        if (int.TryParse(Console.ReadLine(), out num2))
-                        {
-                            Console.WriteLine($"Il tuo riusltato è: {num1 / num2} !");
-                        }
-                    }                 
-                }
+                Console.ReadKey();
+                Console.Clear();
             }
+            while (selezione != "exit");
         }
     }
 }
