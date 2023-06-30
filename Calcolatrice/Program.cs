@@ -57,6 +57,8 @@ namespace Calcolatrice
                 Console.WriteLine("\t3 - Moltiplicazioni");
                 Console.WriteLine("\t4 - Divisioni");
                 Console.WriteLine("\t5 - Potenze");
+                Console.WriteLine("\t6 - Radice quadrata");
+
                 Console.WriteLine("\t9 - exit");    
 
                 Console.WriteLine();
@@ -64,11 +66,11 @@ namespace Calcolatrice
                 Console.Write("SCEGLI -> ");
                 selezione = Console.ReadLine();
 
-                if (int.TryParse(selezione, out int operazione) && operazione >= 1 && operazione <= 5 || operazione == 9);
+                if (int.TryParse(selezione, out int operazione) && operazione >= 1 && operazione <= 5 || operazione == 6 || operazione == 9)
                 {
                     int op1 = 0, op2 = 0;
 
-                    if (operazione != 9);
+                    if (operazione != 6 && operazione != 9) 
                     {
                         Console.WriteLine("Primo operando -> ");
                         int.TryParse(Console.ReadLine(), out op1);
@@ -76,7 +78,11 @@ namespace Calcolatrice
                         Console.WriteLine($"{Environment.NewLine}Secondo operando -> ");
                         int.TryParse(Console.ReadLine(), out op2);
                     }
-
+                    
+                    if (operazione == 6);
+                        Console.WriteLine("Inserisci il numero -> ");
+                        int.TryParse(Console.ReadLine(), out op1);
+                    
                     switch (operazione)
                     {
                         case 1:
@@ -105,7 +111,12 @@ namespace Calcolatrice
                         case 5:
                             Console.WriteLine($"{op1} elevato alla {op2} = {Math.Pow(op1, op2)}");
 
-                            break;                   
+                            break;
+                        
+                        case 6:
+                            Console.WriteLine($"Radice quadrata di {op1} = {Math.Sqrt(op1)}");
+
+                            break;
                     }
                 }
                 Console.ReadKey();
