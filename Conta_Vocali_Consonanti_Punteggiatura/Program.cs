@@ -7,8 +7,8 @@ namespace conta_vocali_consonanti_punteggiatura
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Inserisci una frase");
-            //string lettura = Console.ReadLine();
+            Console.WriteLine("Inserisci una frase");
+            string lettura = Console.ReadLine();
 
             //int vocali = 0, consonanti = 0, punteggiatura = 0, cifre=0;
 
@@ -65,8 +65,12 @@ namespace conta_vocali_consonanti_punteggiatura
             //       if (char.IsDigit(c))
             //        cifre++;
             //}
+
+
             //Console.WriteLine($"Vocali: {vocali}, Consonanti: {consonanti}, " +
             //                  $"Punteggiatura: {punteggiatura}, Cifre: {cifre}"); 
+
+            //-------------------------------------------------------------------------------------------------
 
             // UN ALTRO ESERCIZIO 
             //DirectoryInfo cartella = new DirectoryInfo(".");
@@ -84,10 +88,9 @@ namespace conta_vocali_consonanti_punteggiatura
             //C O N T A   O C C O R R E N Z E - V E R S O  G L I  A R R A Y
 
             //La soluzione del masochista
-            //int a=0, b=0, c=0, d=0; //ecc. abbiate pieta!
+            //int a=0, b=0, c=0, d=0;
 
-            Console.WriteLine("Inserisci una frase");
-            string lettura = Console.ReadLine();
+            //-------------------------------------------------------------------------------------------------
 
             //foreach (char lettera in lettura)
             //  switch (lettera)
@@ -112,6 +115,8 @@ namespace conta_vocali_consonanti_punteggiatura
             //    Console.WriteLine($"Simbolo {lettera} trovato {occorrenze} volt{(occorrenze>1 ? 'e' : 'a')}");
             //}
 
+            //------------------------------------------------------------------------------------------------
+
             string alfabeto = "abcdefghkilmnopqrstuvwxyz01234567890-=+_.,?()%$^&*/";
 
             string risultato = "";
@@ -131,18 +136,18 @@ namespace conta_vocali_consonanti_punteggiatura
             }
             Console.WriteLine(risultato);
 
-            char cercato = 'c';
-            for (int i = 0; i < risultato.Length / 6; i++)
-            {
-                string blocco = risultato.Substring(6 * i, 6);
+            //char cercato = 'c';
+            //for (int i = 0; i < risultato.Length / 6; i++)
+            //{
+            //    string blocco = risultato.Substring(6 * i, 6);
 
-                if (blocco[0] == cercato)
-                {
-                    int occorrenze = int.Parse(blocco.Substring(1, 5));
-                    Console.WriteLine($"Simbolo {cercato} trovato {occorrenze} volt{(occorrenze > 1 ? 'e' : 'a')}");
-                    break;
-                }
-            }
+            //    if (blocco[0] == cercato)
+            //    {
+            //        int occorrenze = int.Parse(blocco.Substring(1, 5));
+            //        Console.WriteLine($"Simbolo {cercato} trovato {occorrenze} volt{(occorrenze > 1 ? 'e' : 'a')}");
+            //        break;
+            //    }
+            //}
 
 
 
