@@ -78,8 +78,8 @@ namespace conta_vocali_consonanti_punteggiatura
 
             //foreach (FileInfo file in cartella.GetFiles())
             //{
-            //  Console.WriteLine($"File: {file.Name.PadRight(60, ' ')} - Dimensione: {file.Length}bytes");
-            //  totale_spazio += file.Length;
+            //    Console.WriteLine($"File: {file.Name.PadRight(60, ' ')} - Dimensione: {file.Length}bytes");
+            //    totale_spazio += file.Length;
             //}
 
             //Console.WriteLine($"\n----------Totale spazio occupato dalla cartella:  {totale_spazio}bytes");
@@ -88,31 +88,31 @@ namespace conta_vocali_consonanti_punteggiatura
             //C O N T A   O C C O R R E N Z E - V E R S O  G L I  A R R A Y
 
             //La soluzione del masochista
-            //int a=0, b=0, c=0, d=0;
+            //int a = 0, b = 0, c = 0, d = 0;
 
             //-------------------------------------------------------------------------------------------------
 
             //foreach (char lettera in lettura)
-            //  switch (lettera)
-            //  {
-            //    case 'a': a++; break;
-            //    case 'b': b++; break;
-            //    case 'c': c++; break;
-            //    case 'd': d++; break;
-            //  }
+            //    switch (lettera)
+            //    {
+            //        case 'a': a++; break;
+            //        case 'b': b++; break;
+            //        case 'c': c++; break;
+            //        case 'd': d++; break;
+            //    }
 
             //con le stringe - variante 1
             //string alfabeto = "abcdefghkilmnopqrstuvwxyz01234567890-=+_.,?()%$^&*/";
 
-            //foreach(char lettera in alfabeto)
+            //foreach (char lettera in alfabeto)
             //{
-            //  int occorrenze = 0;
+            //    int occorrenze = 0;
 
-            //  foreach (char c in lettura)
-            //    if (c == lettera) occorrenze++;
+            //    foreach (char c in lettura)
+            //        if (c == lettera) occorrenze++;
 
-            //  if (occorrenze > 0)
-            //    Console.WriteLine($"Simbolo {lettera} trovato {occorrenze} volt{(occorrenze>1 ? 'e' : 'a')}");
+            //    if (occorrenze > 0)
+            //        Console.WriteLine($"Simbolo {lettera} trovato {occorrenze} volt{(occorrenze > 1 ? 'e' : 'a')}");
             //}
 
             //------------------------------------------------------------------------------------------------
@@ -136,18 +136,18 @@ namespace conta_vocali_consonanti_punteggiatura
             }
             Console.WriteLine(risultato);
 
-            //char cercato = 'c';
-            //for (int i = 0; i < risultato.Length / 6; i++)
-            //{
-            //    string blocco = risultato.Substring(6 * i, 6);
+            char cercato = 'c';
+            for (int i = 0; i < risultato.Length / 6; i++)
+            {
+                string blocco = risultato.Substring(6 * i, 6);
 
-            //    if (blocco[0] == cercato)
-            //    {
-            //        int occorrenze = int.Parse(blocco.Substring(1, 5));
-            //        Console.WriteLine($"Simbolo {cercato} trovato {occorrenze} volt{(occorrenze > 1 ? 'e' : 'a')}");
-            //        break;
-            //    }
-            //}
+                if (blocco[0] == cercato)
+                {
+                    int occorrenze = int.Parse(blocco.Substring(1, 5));
+                    Console.WriteLine($"Simbolo {cercato} trovato {occorrenze} volt{(occorrenze > 1 ? 'e' : 'a')}");
+                    break;
+                }
+            }
 
 
 
